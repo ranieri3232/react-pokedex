@@ -16,9 +16,9 @@ export function Home(){
       setPokemon(data);
     })()
   },[page]);
-  // useEffect(() => {
-  //   console.log(pokemon);
-  // },[pokemon]);
+  useEffect(() => {
+    console.log(pokemon);
+  },[pokemon]);
   return(
     <div id="pokedex-page">
       <h1>Home</h1>
