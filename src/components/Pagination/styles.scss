@@ -1,0 +1,29 @@
+.pagination{
+  display: inline-block;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-inline: auto;
+
+  button {
+    background-color: transparent;
+    border: transparent;
+    border-radius: 6px;
+    color: black;
+    padding: 8px 16px;
+    cursor: pointer;
+    display: inline-block;
+    width: 70px;
+
+    &:hover:not(.active){
+      background-color: rgb(155, 155, 155);
+    }
+    font-size: 2.0rem;
+
+    transition: background-color .3s;
+    
+  }
+  button.active{
+    background-color: #212121;
+    color: white;
+  }
+}

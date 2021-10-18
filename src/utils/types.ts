@@ -1,10 +1,17 @@
 export type pokemonListType = {
+  count: number;
   next: string| null;
   previous: string | null;
   results: Array<{
     name: string;
     url: string;
   }>;
+}
+export type pokemonDataType = {
+  count: number;
+  next: string| null;
+  previous: string | null;
+  pokemon: Array<pokemonType>;
 }
 
 export type pokemonType = {
@@ -22,9 +29,9 @@ export type pokemonType = {
   sprites:{
     other:{
       'official-artwork':{
-        front_default: string;
+        'front_default': string;
       }
     }
   }
-  
+
 }

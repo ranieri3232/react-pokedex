@@ -1,0 +1,38 @@
+.nav-bar{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #212121;
+
+  border-bottom: 1px solid #535353;
+
+  li{
+    float: left;
+    transition: .3s;
+    display: flex;
+  }
+
+  li svg{
+    width: 40px;
+    margin-left: 8px;
+  }
+
+  li a{
+    color: white;
+    text-align: center;
+    font: 400 'Roboto', sans-serif;
+    font-size: 2.2rem;
+    padding: 14px 16px;
+    text-decoration: none;
+
+  }
+  li.active{
+    a {
+      font-weight: bold;
+    }
+  }
+  li:hover:not(.active){
+    background-color: #1f1f1f;
+  }
+}
