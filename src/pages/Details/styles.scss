@@ -1,4 +1,115 @@
 .details-page{
   display: flex;
-  min-height: 100vh;
+  flex-direction: column;
+  .header{
+    display: flex;
+    width: 100%;
+    background-color: #212121;
+    position: relative;
+    align-items: center;
+    h1{
+      color: white;
+      position: absolute;
+      right: 50%;
+    }
+
+    button { 
+      background-color: transparent;
+      border: transparent;
+      width: 50px;
+      height: 50px;
+      margin: 16px 16px;
+      cursor: pointer;
+      color: white;
+      transition: filter .3s;
+      &:hover{
+        filter: brightness(0.7);
+      }
+    }
+  }
+  .content{
+    display: flex;
+    flex-direction: row;
+    img{
+      margin-top: 32px;
+      max-width: 40%;
+    }
+    h2{
+      font-size: 3.2rem;
+    }
+    span, strong{
+      font-size: 2.4rem;
+    }
+    .pokemon-atributtes{
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h2{
+        margin: 8px;
+      }
+
+      .row{
+        display: flex;
+        padding-top: 8px;
+        gap: 8px;
+        align-items: flex-start;
+        width: 100%;
+        >span{
+          width: 50%;
+        }
+        >strong{
+          width: 50%;
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-start;
+        }
+        >div.abilites{
+          display: flex;
+          flex-direction: column;
+          width: 50%;
+          gap: 8px;
+
+          >span{
+            min-width: 120px;
+            display: flex;
+            color: white;
+            border-radius: 5px;
+            padding: 2px 8px;
+            justify-content: center;
+          }
+        }
+        
+      }
+    }
+  }
+  .pokemon-stats{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h2{
+      margin: 8px;
+    }
+    .row{
+      display: flex;
+      width: 100%;
+      gap: 8px;
+      margin-top: 8px;
+
+      >strong{
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        
+      }
+      >div.progress-bar{
+        width: 50%;
+      }
+    }
+  }
 }

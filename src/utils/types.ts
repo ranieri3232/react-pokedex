@@ -25,7 +25,25 @@ export type pokemonType = {
       url: string;
     }
   }>;
-  weigth: number;
+  abilities: Array<{
+    ability: {
+      name: string;
+      url: string;
+    }
+    // eslint-disable-next-line camelcase
+    is_hidden: boolean;
+    slot: number;
+  }>;
+  stats: Array<{
+    // eslint-disable-next-line camelcase
+    base_stat: number;
+    effort: number;
+    stat:{
+      name: string;
+      url: string;
+    }
+  }>;
+  weight: number;
   sprites:{
     other:{
       'official-artwork':{

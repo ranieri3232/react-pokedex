@@ -11,7 +11,7 @@ export function Home() {
   const [page, setPage] = useState(1);
   const [pokemonData, setPokemonData] = useState<pokemonDataType>({} as pokemonDataType);
   const [filteredPokemon, setFilteredPokemon] = useState<pokemonType[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [searchName, setSearchName] = useState('');
   useEffect(() => {
     (async () => {
@@ -71,6 +71,7 @@ export function Home() {
         page={page}
         // eslint-disable-next-line react/jsx-no-bind
         paginate={paginate}
+        setPage={setPage}
         totalItens={pokemonData.count}
         limit={limit}
       />
