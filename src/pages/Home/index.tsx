@@ -1,4 +1,5 @@
 import React, { FormEvent, useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 import { Loading } from '../../components/Loading';
 import { Pagination } from '../../components/Pagination';
 import { Pokemon } from '../../components/Pokemon';
@@ -7,12 +8,19 @@ import { pokemonDataType, pokemonType } from '../../utils/types';
 import './styles.scss';
 
 export function Home() {
+  const { id } = useParams() as { id: string };
   const limit = 30;
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(+id);
   const [pokemonData, setPokemonData] = useState<pokemonDataType>({} as pokemonDataType);
   const [filteredPokemon, setFilteredPokemon] = useState<pokemonType[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchName, setSearchName] = useState('');
+
+  // useEffect(() => {
+  //   if (id) {
+  //     setPage(+id);
+  //   }
+  // }, [id]);
   useEffect(() => {
     (async () => {
       const pokemonList = await getPokemonList(limit, (page - 1) * limit);

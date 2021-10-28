@@ -9,9 +9,9 @@ export function Navbar() {
   return (
     <header>
       <ul className="nav-bar">
-        <li className={location.pathname === '/' ? 'active' : ''}>
+        <li className={location.pathname.includes('/page') ? 'active' : ''}>
           <PokeballSvg />
-          <a href="/">Home</a>
+          <a href="/page/1">Home</a>
         </li>
         <li className={location.pathname === '/generations' ? 'active' : ''}><a href="/generations">Generations</a></li>
         <li className={location.pathname === '/favorites' ? 'active' : ''}><a href="/favorites">Favorites</a></li>

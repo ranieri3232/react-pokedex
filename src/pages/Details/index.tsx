@@ -22,7 +22,9 @@ export function Details() {
   const { id } = params;
 
   function handleBackToHome() {
-    history.push('/');
+    if (pokemon) {
+      history.push(`/page/${Math.ceil(pokemon.id / 30)}`);
+    }
   }
   useEffect(() => {
     setLoading(true);
@@ -63,7 +65,7 @@ export function Details() {
                   <strong>Abilites</strong>
                   <div className="abilites">
                     {pokemon.abilities.map((ability) => (
-                      <span className={`${pokemon.types[0].type.name}`}>
+                      <span key={ability.ability.name} className={`${pokemon.types[0].type.name}`}>
                         {ability.ability.name}
                       </span>
                     ))}
@@ -79,7 +81,7 @@ export function Details() {
               <div className="pokemon-stats">
                 <h2>Stats</h2>
                 {pokemon.stats.map(({ stat, base_stat }) => (
-                  <div className="row">
+                  <div key={stat.name} className="row">
                     <strong>{stat.name}</strong>
                     <ProgressBar now={base_stat} max={200} />
                   </div>
