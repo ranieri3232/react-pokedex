@@ -73,7 +73,7 @@ export function Details() {
                 </div>
                 <div className="row">
                   <strong>Types</strong>
-                  {pokemon ? <PokemonTypeIndicator simpleIndicator types={pokemon.types} /> : ''}
+                  {pokemon ? <PokemonTypeIndicator types={pokemon.types} /> : ''}
                 </div>
 
               </div>
