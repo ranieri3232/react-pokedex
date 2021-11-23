@@ -1,13 +1,13 @@
-#favorites-page{
+#favorites-page {
   display: flex;
   flex-direction: column;
 
-  h1{
+  h2 {
     padding: 10px 10px;
     background-color: #212121;
     color: white;
   }
-  .card-list{
+  .card-list {
     margin: auto;
     display: grid;
     width: 80%;
@@ -15,16 +15,16 @@
     justify-content: center;
     gap: 10px;
     margin-bottom: 16px;
-    .no-results{
+    .no-results {
       display: flex;
       flex-direction: column;
       height: 100%;
       margin-top: 20px;
       margin-bottom: 10px;
       text-align: center;
-      span{
+      span {
         margin-top: 8px;
       }
     }
   }
-} 
+}

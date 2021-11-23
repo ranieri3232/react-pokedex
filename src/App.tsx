@@ -9,22 +9,46 @@ import { Details } from './pages/Details';
 import { Favorites } from './pages/Favorites';
 import { GenerationPage } from './pages/GenerationPage';
 import { Home } from './pages/Home';
+import { NotFound } from './pages/NotFound';
 import './styles/global.scss';
+
+type NavRoutePorps = {
+  // eslint-disable-next-line react/require-default-props
+  exact?: boolean | undefined;
+  path: string;
+  component: React.FC;
+}
+const NavRoute = ({ path, component: Teste, exact = false }:NavRoutePorps) => (
+  <>
+    <Route
+      exact={exact}
+      path={path}
+      render={() => (
+        <>
+          <Navbar />
+          <Teste />
+        </>
+      )}
+    />
+  </>
+);
 
 export function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <Switch>
-        <FavoritePokemonContextProvider>
+      <FavoritePokemonContextProvider>
+        <Switch>
+
           <Route exact path="/"><Redirect to="/page/1" /></Route>
-          <Route exact path="/page/:id" component={Home} />
-          <Route path="/generations" component={GenerationPage} />
-          <Route path="/favorites" component={Favorites} />
-          <Route path="/details/:id" component={Details} />
-        </FavoritePokemonContextProvider>
-        <Route path="/about" component={About} />
-      </Switch>
+          <NavRoute exact path="/page/:id" component={Home} />
+          <NavRoute path="/generations/:gen" component={GenerationPage} />
+          <NavRoute path="/favorites" component={Favorites} />
+          <NavRoute path="/details/:id" component={Details} />
+          <Route path="/about" component={About} />
+          <Route component={NotFound} />
+
+        </Switch>
+      </FavoritePokemonContextProvider>
     </BrowserRouter>
   );
 }

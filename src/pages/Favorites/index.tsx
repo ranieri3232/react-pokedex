@@ -8,7 +8,7 @@ export function Favorites() {
 
   return (
     <div id="favorites-page">
-      <h1>Favorites</h1>
+      <h2>Favorites</h2>
       <div className="card-list">
         {
           favorites.length !== 0

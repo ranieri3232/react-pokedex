@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 export type pokemonListType = {
   count: number;
   next: string| null;
@@ -6,6 +7,19 @@ export type pokemonListType = {
     name: string;
     url: string;
   }>;
+}
+export type generationType = {
+  name: string;
+  pokemon_species: Array<{
+    name: string;
+    url: string;
+  }>;
+  id: number;
+};
+export type generationDataTypes = {
+  name: string;
+  id: number;
+  pokemon: Array<pokemonType>;
 }
 export type pokemonDataType = {
   count: number;

@@ -10,3 +10,14 @@ export function range(start: number, end: number) {
   }
   return arr;
 }
+
+export const genIndex = [
+  'I',
+  'II',
+  'III',
+  'IV',
+  'V',
+  'VI',
+  'VII',
+  'VIII',
+];

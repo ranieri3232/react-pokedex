@@ -16,13 +16,9 @@ export function Home() {
   const [loading, setLoading] = useState(true);
   const [searchName, setSearchName] = useState('');
 
-  // useEffect(() => {
-  //   if (id) {
-  //     setPage(+id);
-  //   }
-  // }, [id]);
   useEffect(() => {
     (async () => {
+      setLoading(true);
       const pokemonList = await getPokemonList(limit, (page - 1) * limit);
       const promisses = pokemonList.results.map((pkm) => getPokemonData(pkm.name));
       const pokemon = await Promise.all(promisses);
@@ -35,7 +31,6 @@ export function Home() {
   }, [page]);
 
   function paginate(pageNumber: number) {
-    setLoading(true);
     setPage(pageNumber);
   }
   function handleSubmit(event: FormEvent) {

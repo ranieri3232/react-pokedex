@@ -1,0 +1,19 @@
+#generation-page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  h2 {
+    padding: 10px 10px;
+    background-color: #212121;
+    color: white;
+  }
+  .card-list {
+    margin: auto;
+    display: grid;
+    width: 80%;
+    grid-template-columns: repeat(auto-fit, 300px);
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+}

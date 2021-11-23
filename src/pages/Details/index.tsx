@@ -23,7 +23,7 @@ export function Details() {
 
   function handleBackToHome() {
     if (pokemon) {
-      history.push(`/page/${Math.ceil(pokemon.id / 30)}`);
+      history.goBack();
     }
   }
   useEffect(() => {
