@@ -10,6 +10,7 @@ import { useFavorites } from '../../hooks/useFavorites';
 type PokemonProps = {
   pokemon: pokemonType;
 }
+const baseURL = 'https://github.com/ranieri3232/pokemon-sprites/blob/master/';
 export function Pokemon({ pokemon }:PokemonProps) {
   const { favorites, updateFavoritePokemon } = useFavorites();
 
@@ -30,7 +31,7 @@ export function Pokemon({ pokemon }:PokemonProps) {
           </span>
         </div>
 
-        <img src={`../images/animated/${pokemon.name}.gif`} alt={pokemon.name} />
+        <img src={`${baseURL}${pokemon.name}.gif?raw=true`} alt={pokemon.name} />
         <PokemonTypeIndicator types={pokemon.types} />
         <button onClick={(e) => handleButtonClick(e)} type="button">
           <HeartSvg
