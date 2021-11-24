@@ -11,6 +11,7 @@ import { GenerationPage } from './pages/GenerationPage';
 import { Home } from './pages/Home';
 import { NotFound } from './pages/NotFound';
 import './styles/global.scss';
+import './styles/responsive.scss';
 
 type NavRoutePorps = {
   // eslint-disable-next-line react/require-default-props

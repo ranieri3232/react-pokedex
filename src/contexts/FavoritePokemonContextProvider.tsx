@@ -1,24 +1,23 @@
 import React, { createContext, ReactNode } from 'react';
-import { pokemonType } from '../utils/types';
-import usePersistedState from '../utils/usePersistedState';
+import usePersistedFavorite from '../utils/usePersistedFavorite';
 
 type FavoritePokemonContextProps = {
-  updateFavoritePokemon: (pokemon:pokemonType) => void;
-  favorites: pokemonType[];
+  updateFavoritePokemon: (pokemonId:number) => void;
+  favorites: number[];
 }
 type FavoritePokemonContextProviderProps = {
   children: ReactNode;
 }
 export const FavoritePokemonContext = createContext({} as FavoritePokemonContextProps);
 export function FavoritePokemonContextProvider({ children }: FavoritePokemonContextProviderProps) {
-  const [favorites, setFavorites] = usePersistedState<pokemonType[]>('pokemonFavorites', []);
+  const [favorites, setFavorites] = usePersistedFavorite('pkmFavorites', []);
 
-  function updateFavoritePokemon(pokemon: pokemonType) {
-    const data = favorites.find((pkm) => pkm.id === pokemon.id);
+  function updateFavoritePokemon(pokemonId: number) {
+    const data = favorites.find((id) => id === pokemonId);
     if (data) {
-      setFavorites(favorites.filter((pkm) => pkm.id !== pokemon.id));
+      setFavorites(favorites.filter((id) => id !== pokemonId));
     } else {
-      setFavorites((state) => [...state, pokemon]);
+      setFavorites((state) => [...state, pokemonId]);
     }
   }
   return (

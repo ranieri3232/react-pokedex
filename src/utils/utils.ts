@@ -3,6 +3,10 @@ export function pokemonIdFormater(id: number) {
   return code;
 }
 
+export function captalizeFirstLetter(str: string) {
+  return str[0].toUpperCase() + str.slice(1);
+}
+
 export function range(start: number, end: number) {
   const arr:Array<number> = [];
   for (let i = start; i <= end; i += 1) {

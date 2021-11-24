@@ -8,7 +8,7 @@ import { pokemonType } from '../../utils/types';
 import { ReactComponent as ArrowSvg } from '../../assets/arrow.svg';
 import './styles.scss';
 import { PokemonTypeIndicator } from '../../components/PokemonTypeIndicator';
-import { pokemonIdFormater } from '../../utils/utils';
+import { captalizeFirstLetter, pokemonIdFormater } from '../../utils/utils';
 import { ProgressBar } from '../../components/ProgressBar';
 
 type DetailsParams = {
@@ -40,7 +40,7 @@ export function Details() {
         <button type="button" onClick={handleBackToHome}>
           <ArrowSvg />
         </button>
-        <h1>{pokemon?.name}</h1>
+        <h1>{captalizeFirstLetter(pokemon?.name || ' ')}</h1>
       </div>
       {
         loading

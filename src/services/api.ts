@@ -22,6 +22,11 @@ const getPokemonDataById = async (id: number) => {
   const { data } = await api.get<pokemonType>(`pokemon/${id}`);
   return data;
 };
+const getPokemonlistById = async (pokemonIds: number[]) => {
+  const promisses = pokemonIds.map((id) => getPokemonDataById(id));
+  const data = await Promise.all(promisses);
+  return data;
+};
 
 const getPokemonByGeneration = async (gen: number) => {
   const { data } = await api.get<generationType>(`generation/${gen}`);
@@ -36,6 +41,7 @@ const getPokemonByGeneration = async (gen: number) => {
 
 export {
   getPokemonData, getPokemonList, getPokemonDataById, getPokemonByGeneration,
+  getPokemonlistById,
 };
 
 export default api;

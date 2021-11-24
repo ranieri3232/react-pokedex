@@ -11,8 +11,11 @@ export function Navbar() {
   return (
     <header>
       <ul className="nav-bar">
-        <li className={url.includes('/page') ? 'active' : ''}>
+        <div className="brand">
           <PokeballSvg className="pokeball" />
+          <span>React-Pokedex</span>
+        </div>
+        <li className={url.includes('/page') ? 'active' : ''}>
           <a href="/page/1">Home</a>
         </li>
         <li>
@@ -37,6 +40,11 @@ export function Navbar() {
         <li className={url === '/about' ? 'active' : ''}><a href="/about">About</a></li>
 
       </ul>
+      <button type="button" className="hamburguer-button">
+        <div className="one" />
+        <div className="two" />
+        <div className="three" />
+      </button>
     </header>
   );
 }
